@@ -17,7 +17,7 @@
 
 pkgname='oath-toolkit-msys2-ucrt'
 pkgver='2.6.14'
-pkgrel='1'
+pkgrel='2'
 pkgdesc='OATH one-time password toolkit'
 arch=('x86_64')
 url='https://oath-toolkit.codeberg.page/'
@@ -44,12 +44,7 @@ b2sums=(
     '0d20e9d60350268080abd245b47bd84ae426a0007cba8af049994a1f6a5f9153220a570f3ff93432a8c369e8becc342011cea46cf3c75cad2e3f8a70107af2e3'
     'f0db16bedcd731a3f25d26bb2a303fc2bef91e5fdfedc24cd0e5ae7c6c2ec19bd0d68f2931632cb3bcad279cccf4e400b70439d1b1715ef3c373792d7e8cd32d'
 )
-build() {
-    cd "${srcdir}/oath-toolkit-${pkgver}/" && \
-        ./configure && make
-}
 package() {
-    install -Dm755 "${srcdir}/oath-toolkit-${pkgver}/oathtool/oathtool.exe" "${pkgdir}/usr/bin/oathtool.exe" && \
-        install -Dm644 "${srcdir}/oath-toolkit-${pkgver}/liboath/oath.h" "${pkgdir}/usr/include/liboath/oath.h" && \
-        install -Dm644 "${srcdir}/oath-toolkit-${pkgver}/liboath/liboath.pc" "${pkgdir}/usr/lib/pkgconfig/liboath.pc"
+    cd "${srcdir}/oath-toolkit-${pkgver}/" && \
+        ./configure --prefix=${pkgdir}/usr/ && make install
 }
