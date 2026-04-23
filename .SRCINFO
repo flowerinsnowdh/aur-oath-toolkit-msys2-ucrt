@@ -1,0 +1,17 @@
+pkgbase = oath-toolkit-msys2-ucrt
+	pkgdesc = OATH one-time password toolkit
+	pkgver = 2.6.14
+	pkgrel = 1
+	url = https://oath-toolkit.codeberg.page/
+	arch = x86_64
+	license = GPL-3.0-or-later
+	depends = mingw-w64-ucrt-x86_64-gcc-base
+	provides = oath-toolkit=2.6.14-1
+	conflicts = oath-toolkit
+	source = https://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.14.tar.gz
+	source = https://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.14.tar.gz.sig
+	validpgpkeys = B1D2BD1375BECB784CF4F8C4D73CF638C53C06BE
+	b2sums = 0d20e9d60350268080abd245b47bd84ae426a0007cba8af049994a1f6a5f9153220a570f3ff93432a8c369e8becc342011cea46cf3c75cad2e3f8a70107af2e3
+	b2sums = f0db16bedcd731a3f25d26bb2a303fc2bef91e5fdfedc24cd0e5ae7c6c2ec19bd0d68f2931632cb3bcad279cccf4e400b70439d1b1715ef3c373792d7e8cd32d
+
+pkgname = oath-toolkit-msys2-ucrt
